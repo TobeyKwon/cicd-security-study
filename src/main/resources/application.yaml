@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:mysql://database-1.cb2pvusas1pa.ap-northeast-2.rds.amazonaws.com:3306/dbtest1
+    username: admin
+    password: admin1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      format_sql: true
+      default_batch_fetch_size: 1000
+    database: mysql
+  messages:
+    basename: messages, errors
+
+logging:
+  level:
+    org.hibernate:
+      sql: debug
+      type: trace
