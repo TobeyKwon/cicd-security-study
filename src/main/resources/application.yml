@@ -8,16 +8,21 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       format_sql: true
       default_batch_fetch_size: 1000
     database: mysql
   messages:
-    basename: messages, errors
+    basename: messages, errors, auth
 
 logging:
   level:
+    com.example.study: debug
     org.hibernate:
       sql: debug
       type: trace
+
+jwt:
+  header: Authorization
+  secret-key: c3NhZnlzZXZlbmt3b25kb2h5ZW9uc2VjcmV0a2V5MXN0YXdhcmR3aXNoCg==
